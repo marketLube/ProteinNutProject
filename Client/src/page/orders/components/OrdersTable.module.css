@@ -1,0 +1,32 @@
+.ordersTable {
+  /* Add any existing styles for the table container */
+}
+
+.mainTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  /* Add any existing styles for the table head */
+}
+
+.tableBody {
+  min-height: calc(3 * 100px); /* Adjust 100px to match your desired row height */
+  display: table-row-group;
+}
+
+.tableBody tr {
+  height: 100px; /* Adjust this value to match your desired row height */
+}
+
+.emptyRow {
+  height: 100px; /* Same as regular rows */
+}
+
+.emptyRow td {
+  padding: 0;
+  border: none;
+}
+
+/* Add any other existing styles for columns, cells, etc. */

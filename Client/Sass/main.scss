@@ -1,0 +1,22 @@
+@import "./base/variables";
+@import "./base/mixins";
+@import "./base/typography";
+@import "./base/base.scss";
+@import "./layout/login";
+@import "./layout/sidebar";
+
+@import "./utils/basics";
+
+@import "./page/dashboard";
+@import "./page/prooducts";
+@import "./page/orders";
+@import "./page/coupons";
+@import "./page/reviews";
+@import "./page/customer";
+
+@import "./components/buttons";
+
+@import "page/orders";
+@import "./page/reviews";
+@import "page/coupons";
+@import "./components/productmodal";

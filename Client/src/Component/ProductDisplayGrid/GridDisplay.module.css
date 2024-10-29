@@ -1,0 +1,118 @@
+.swiperslides {
+}
+.detailsproduct {
+  width: 100%;
+  height: 75%;
+  /* display: grid; */
+  font-family: "Degular";
+  gap: 2px;
+  flex: 1;
+  padding: 1rem 0;
+  font-weight: 700;
+}
+
+.error {
+  font-size: 3rem;
+  color: red;
+  height: 30vh;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.display {
+  width: 100%;
+  padding: 10rem;
+  padding-bottom: 15rem;
+  flex-direction: column;
+  background-color: transparent;
+  font-family: "Degular";
+}
+
+.headingSecondary {
+  font-size: 8rem;
+  line-height: 1;
+  padding-top: 3rem;
+  font-weight: 700;
+}
+.headingFirst {
+  display: flex;
+  gap: 2rem;
+}
+.delicious {
+  position: relative;
+}
+.yellowBg {
+  position: absolute;
+  width: 100%;
+  background-color: rgb(254, 209, 65);
+  right: 0;
+  bottom: 1.5rem;
+  top: 0;
+  z-index: -1;
+  clip-path: polygon(0 13%, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (max-width: 1024px) {
+  .detailsproduct {
+    grid-template-columns: repeat(1fr);
+    gap: 30px;
+  }
+
+  .display {
+    padding: 10rem; /* Adjust the padding */
+  }
+
+  .heading {
+    font-size: 48px; /* Adjust the font size */
+    width: 75%; /* Adjust the width */
+  }
+
+  .headingSecondary {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .headingFirst {
+    display: flex;
+    gap: 2rem;
+  }
+  .delicious {
+    position: relative;
+  }
+  .yellowBg {
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .detailsproduct {
+    grid-template-columns: 1fr;
+  }
+
+  .display {
+    padding: 2rem;
+  }
+
+  .heading {
+    font-size: 36px;
+    width: 100%;
+  }
+
+  .headingSecondary {
+    font-size: 4rem;
+    line-height: 1;
+  }
+  .headingFirst {
+    display: flex;
+    gap: 2rem;
+  }
+  .delicious {
+    position: relative;
+  }
+  .yellowBg {
+    bottom: 1rem;
+  }
+}

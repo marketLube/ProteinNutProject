@@ -1,0 +1,18 @@
+.reels {
+  touch-action: none; /* Prevents browser handling of touch events */
+  user-select: none;
+  position: relative;
+  z-index: 2; /* Ensure swiper is above other elements */
+  width: 100%;
+}
+
+.bg {
+  overflow: hidden; /* Prevent scroll bleeding */
+  touch-action: none;
+}
+@media (max-width: 768px) {
+  .reels {
+    width: 100%;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <!-- <link rel="stylesheet" href="./index.css" /> -->
+    <link rel="stylesheet" href="./src/fonts.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=image"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_square"
+    />
+
+    <!-- Archivo font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      function smoothScroll() {
+        let scrollAmount = 0;
+        let scrollVelocity = 0;
+        let isScrolling = false;
+        let lastTouchY = 0;
+        let lastScrollTime = Date.now();
+        const throttleDelay = 40;
+
+        // Balanced momentum constants
+        const FRICTION = 0.95; // Increased friction to reduce overshooting
+        const MOMENTUM_MULTIPLIER = 0.15; // Reduced for more controlled momentum
+        const VELOCITY_THRESHOLD = 0.15; // Adjusted threshold
+        const SCROLL_MULTIPLIER = 1.2; // Reduced for more balanced initial scroll
+        const CONTINUATION_BOOST = 0.7; // Reduced boost factor
+
+        function throttle(callback, delay) {
+          let timeoutId;
+          let lastCallTime = 0;
+
+          return function (...args) {
+            const currentTime = Date.now();
+
+            if (currentTime - lastCallTime < delay) {
+              clearTimeout(timeoutId);
+              timeoutId = setTimeout(() => {
+                lastCallTime = currentTime;
+                callback.apply(this, args);
+              }, delay);
+              return;
+            }
+
+            lastCallTime = currentTime;
+            callback.apply(this, args);
+          };
+        }
+
+        function handleScroll(delta) {
+          const currentTime = Date.now();
+          const elapsed = currentTime - lastScrollTime;
+
+          // Add direction-based adjustment
+          const directionMultiplier = delta > 0 ? 1 : 0.8; // Reduce upward scroll speed
+
+          // Smoother velocity calculation
+          const newVelocity =
+            (delta * SCROLL_MULTIPLIER * directionMultiplier) /
+            Math.max(elapsed, 16);
+          scrollVelocity = scrollVelocity * 0.8 + newVelocity * 0.2; // More gradual velocity blending
+
+          // Add to scroll amount with direction adjustment
+          scrollAmount += delta * SCROLL_MULTIPLIER * directionMultiplier;
+
+          lastScrollTime = currentTime;
+
+          if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(smoothStep);
+          }
+        }
+
+        function applyMomentum() {
+          // Direction-aware momentum
+          const directionMultiplier = scrollVelocity > 0 ? 1 : 0.8;
+
+          if (Math.abs(scrollVelocity) > VELOCITY_THRESHOLD * 2) {
+            scrollAmount +=
+              scrollVelocity *
+              MOMENTUM_MULTIPLIER *
+              CONTINUATION_BOOST *
+              directionMultiplier;
+          } else {
+            scrollAmount +=
+              scrollVelocity * MOMENTUM_MULTIPLIER * directionMultiplier;
+          }
+
+          scrollVelocity *= FRICTION;
+
+          if (Math.abs(scrollVelocity) < VELOCITY_THRESHOLD) {
+            scrollVelocity *= 0.9; // Faster fadeout
+          }
+        }
+
+        function smoothStep() {
+          if (
+            Math.abs(scrollAmount) > 0.01 ||
+            Math.abs(scrollVelocity) > VELOCITY_THRESHOLD
+          ) {
+            const scrollStep = scrollAmount * 0.12; // Reduced for smoother movement
+
+            window.scrollBy(0, scrollStep);
+            scrollAmount -= scrollStep;
+
+            applyMomentum();
+            requestAnimationFrame(smoothStep);
+          } else {
+            if (Math.abs(scrollVelocity) > VELOCITY_THRESHOLD * 0.5) {
+              scrollAmount += scrollVelocity * CONTINUATION_BOOST;
+              requestAnimationFrame(smoothStep);
+            } else {
+              scrollAmount = 0;
+              scrollVelocity = 0;
+              isScrolling = false;
+            }
+          }
+        }
+
+        const throttledScroll = throttle((delta) => {
+          handleScroll(delta);
+        }, throttleDelay);
+
+        // Wheel event handler
+        window.addEventListener(
+          "wheel",
+          (event) => {
+            event.preventDefault();
+            throttledScroll(event.deltaY);
+          },
+          { passive: false }
+        );
+
+        // Touch event handlers
+        window.addEventListener("touchstart", (event) => {
+          lastTouchY = event.touches[0].clientY;
+          scrollVelocity *= 0.3; // Reduced initial velocity on touch
+        });
+
+        window.addEventListener("touchmove", (event) => {
+          const currentTouchY = event.touches[0].clientY;
+          const deltaY = lastTouchY - currentTouchY;
+          throttledScroll(deltaY);
+          lastTouchY = currentTouchY;
+        });
+
+        window.addEventListener("touchend", () => {
+          scrollVelocity *= MOMENTUM_MULTIPLIER * 0.8; // Reduced final momentum
+          lastTouchY = 0;
+        });
+      }
+
+      smoothScroll();
+    </script>
+  </body>
+</html>

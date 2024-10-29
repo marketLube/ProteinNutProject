@@ -1,0 +1,18 @@
+a {
+  text-decoration: none;
+  color: $text-gray;
+}
+.active li {
+  background-color: $light-gray;
+}
+li {
+  list-style: none;
+}
+
+.logo-container {
+  width: 10rem;
+
+  & img {
+    width: 100%;
+  }
+}

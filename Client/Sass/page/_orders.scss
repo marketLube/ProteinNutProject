@@ -1,0 +1,178 @@
+$row-height: 4rem;
+.orders__table {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  th, td {
+    padding: 0;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.85rem;
+    height: $row-height;
+    vertical-align: top;
+  }
+
+  thead {
+    color: $table-blue;
+    font-size: 0.85rem;
+    font-weight: 600;
+    height: $thead-height;
+
+    th {
+      height: $thead-height;
+      vertical-align: middle;
+      padding: 0 1rem;
+    }
+  }
+
+  tbody {
+    height: calc(6 * #{$row-height}); // Fixed height for 4 rows
+  
+    tr {
+      height: $row-height;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    // Placeholder row when no orders are present
+    .no-orders {
+      height: 100%;
+      text-align: center;
+      color: #999;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .cell-content {
+    padding: 0.5rem 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .order-column {
+    color: $table-blue;
+    font-weight: 600;
+  }
+
+  .product-column {
+    .product-name {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .price-info {
+      font-size: 0.75rem;
+      color: #666;
+    }
+  }
+
+  .address-column {
+    min-width: 250px;
+    max-width: 250px;
+    .formatted-address {
+      white-space: normal;
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+    .phone-number {
+      font-size: 0.8rem;
+      color: #666;
+    }
+  }
+
+  .payment-column {
+    .payment-status {
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+  }
+
+  .status-column {
+    .status-dropdown {
+      position: relative;
+    }
+  
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 15rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      width: 120px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      display: block;
+      float: left;
+      min-width: 10rem;
+      padding: 0.5rem 0;
+      margin: 0.125rem 0 0;
+      font-size: 0.8rem;
+      color: #212529;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
+  
+      li {
+        padding: 0.25rem 1.5rem;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #f8f9fa;
+        }
+      }
+    }
+  
+    .completed-btn {
+      background-color: #007bff;
+      color: white;
+    }
+  
+    .confirmed-btn {
+      background-color: #28a745;
+      color: white;
+    }
+  
+    .canceled-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+  
+    .on-refund-btn { // Changed from on-refound-btn to on-refund-btn
+      background-color: #6c757d;
+      color: white;
+    }
+  }
+}

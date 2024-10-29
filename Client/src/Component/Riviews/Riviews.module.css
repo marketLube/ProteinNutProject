@@ -1,0 +1,125 @@
+/* General styling */
+.reviewsandratings {
+  background-color: #ffffff;
+  border: 1px solid #f0e9d6;
+  border-radius: 3rem;
+  padding: 6rem;
+  max-width: 50vw;
+  height: fit-content;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease-in-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.rateproductbtn {
+  background-color: #5c8e55;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  width: 15rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.rateproductbtn:hover {
+  background-color: #195c10;
+}
+
+.iicon {
+  margin-left: 0.25rem;
+  width: 18px;
+  height: 18px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  display: flex;
+  margin-right: 0.5rem;
+}
+
+.reviewcount {
+  color: #4b5563;
+  font-size: 2rem;
+}
+
+/* Media Queries for responsiveness */
+
+/* Large screens (Desktops, starting from 1200px) */
+@media (min-width: 1200px) {
+  .reviewsandratings {
+    padding: 6rem;
+    max-width: 40vw;
+  }
+  .header h2 {
+    font-size: 3.5rem;
+  }
+  .rateproductbtn {
+    width: 18rem;
+    height: 5rem;
+  }
+  .reviewcount {
+    font-size: 2.5rem;
+  }
+}
+
+/* Medium screens (Tablets, 768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .reviewsandratings {
+    padding: 4rem;
+    max-width: 70vw;
+  }
+  .header h2 {
+    font-size: 2.5rem;
+  }
+  .rateproductbtn {
+    width: 12rem;
+    height: 3.5rem;
+  }
+  .reviewcount {
+    font-size: 1.8rem;
+  }
+}
+
+/* Small screens (Mobile devices, up to 767px) */
+@media (max-width: 767px) {
+  .reviewsandratings {
+    padding: 2rem;
+    max-width: 90vw;
+  }
+  .header h2 {
+    font-size: 2rem;
+  }
+  .rateproductbtn {
+    /* width: 10rem;
+    height: 3rem; */
+    padding: .2rem;
+  }
+  .reviewcount {
+    font-size: 1.5rem;
+  }
+}

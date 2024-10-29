@@ -1,0 +1,106 @@
+.card {
+  background-color: transparent;
+  height: 40rem;
+  margin: 0 auto;
+}
+
+.parallax {
+  background-color: #5c8e55;
+  height: 40rem;
+  width: 80%;
+  border-radius: 8rem;
+  margin: -5rem auto;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.content img {
+  width: 30%;
+}
+
+.textItem {
+  position: absolute;
+  color: #f0f0e0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.size {
+  height: 15rem;
+}
+.sizeheart {
+  height: 6.4rem;
+}
+
+.protein {
+  top: 19%;
+  left: 8%;
+}
+
+.heart {
+  top: 16%;
+  right: 22%;
+}
+
+.nutrient {
+  bottom: 21%;
+  left: 20%;
+}
+
+.energy {
+  bottom: 13%;
+  right: 11%;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 30rem;
+  }
+  .parallax {
+    padding-top: 1rem;
+    width: 80%;
+    height: 35rem;
+    border-radius: 4rem;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 2rem;
+  }
+
+  .content img {
+    width: 60%;
+    margin-bottom: 1.5rem;
+  }
+
+  .textItem {
+    font-size: 1.2rem;
+    position: relative;
+    margin: 1rem 0;
+  }
+  .sizeheart {
+    height: 4.5rem;
+  }
+
+  .protein,
+  .heart,
+  .nutrient,
+  .energy {
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+}

@@ -1,0 +1,162 @@
+.healthyflavr {
+  color: #00004d;
+  background-color: rgb(254, 209, 65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+.head {
+  font-size: 90px;
+  width: 80%;
+  font-weight: 700;
+}
+
+.headingFirst {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  font-family: "Degular";
+}
+.infinite {
+  position: relative;
+}
+
+.whiteBg {
+  position: absolute;
+  width: 100%;
+  background-color: #f6f6f6;
+  right: 0;
+  left: 0;
+
+  height: 6rem;
+  bottom: 3rem;
+  border-radius: 3px;
+
+  z-index: -1;
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+}
+.possibilities {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 5rem;
+}
+
+.note {
+  padding-top: 25px;
+  font-size: 20px;
+}
+
+.shopnow {
+  background-color: #5c8e55;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.5rem;
+  border-radius: 9999px;
+  width: 20rem;
+  height: 5rem;
+  gap: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.shopnow h2 {
+  margin: 0;
+}
+.subhead {
+  font-size: 30px;
+  margin-top: 60px;
+}
+
+/* Media Queries */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .healthyflavr {
+    padding: 20px 0;
+  }
+  .head {
+    font-size: 40px;
+    width: 90%;
+  }
+  .subhead {
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  .note {
+    font-size: 16px;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  .shopnow {
+    width: 16rem;
+    height: 4rem;
+    font-size: 1rem;
+    gap: 1rem;
+  }
+  .headingFirst {
+    flex-direction: column;
+    gap: 1px;
+  }
+  .infinite {
+    line-height: 3rem;
+  }
+  .whiteBg {
+    /* bottom: 70px; */
+    height: 2rem;
+    top: 6px;
+  }
+}
+
+/* Medium devices (tablets, 600px to 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+  .healthyflavr {
+    padding: 0;
+  }
+  .head {
+    font-size: 60px;
+    width: 85%;
+  }
+
+  .note {
+    font-size: 18px;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .shopnow {
+    width: 18rem;
+    height: 4.5rem;
+    font-size: 1.125rem;
+    gap: 1.5rem;
+  }
+}
+
+/* Large devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+  .healthyflavr {
+    padding: 0;
+  }
+  .head {
+    font-size: 90px;
+    width: 80%;
+  }
+
+  .note {
+    font-size: 20px;
+    padding-top: 25px;
+  }
+
+  .shopnow {
+    width: 20rem;
+    height: 5rem;
+  }
+}

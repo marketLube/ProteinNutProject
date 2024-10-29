@@ -1,0 +1,45 @@
+.btn {
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem; // Reduced font size
+  padding: 0.5rem 1.5rem; // Reduced padding
+  border-radius: 1rem; // Adjusted border-radius for smaller buttons
+}
+.secondary-btn,
+.primary-btn {
+  background-color: $color-green;
+  color: $light-gray;
+  border-radius: 15rem;
+  padding: 0.8rem 3rem;
+}
+.secondary-btn {
+  background-color: $color-red;
+}
+
+
+.completed-btn {
+  background-color: $table-blue;
+  color: $light-gray;
+  border-radius: 15rem;
+  padding: 0.8rem 3rem;
+}
+
+.confirmed-btn {
+  background-color:$color-green;
+  color: $light-gray;
+  border-radius: 15rem;
+  padding: 0.8rem 3rem;
+}
+
+.on-refound-btn {
+  background-color: #515C6B;
+  color: $light-gray;
+  border-radius: 15rem;
+  padding: 0.8rem 3rem;
+}
+
+
+
+
+
+

@@ -1,0 +1,109 @@
+/* General styling */
+.reviewbox {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  height: 15rem;
+  width: 70%;
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+.reviewrating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.ratingbadge {
+  background-color: #fbbf24;
+  color: rgb(10, 10, 10);
+  font-weight: bold;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.ratingtext {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1.5rem;
+}
+
+.reviewtext {
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  padding-top: 1rem;
+}
+
+.reviewerinfo {
+  color: #6b7280;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+/* Responsive styling */
+
+/* Large screens (Desktops, 1200px and above) */
+@media (min-width: 1200px) {
+  .reviewbox {
+    width: 60%; /* Slightly decrease width for larger screens */
+    height: auto; /* Allow the height to adjust based on content */
+  }
+  .ratingbadge {
+    font-size: 1.8rem; /* Increase size for readability on large screens */
+  }
+  .ratingtext {
+    font-size: 1.8rem; /* Increase the text size */
+  }
+  .reviewtext {
+    font-size: 1.7rem; /* Adjust the text size for large screens */
+  }
+  .reviewerinfo {
+    font-size: 1.2rem;
+  }
+}
+
+/* Medium screens (Tablets, 768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .reviewbox {
+    width: 80%; /* Increase width to fit better on medium screens */
+    height: auto; /* Allow the height to adjust based on content */
+  }
+  .ratingbadge {
+    font-size: 1.6rem; /* Adjust size for medium screens */
+  }
+  .ratingtext {
+    font-size: 1.6rem;
+  }
+  .reviewtext {
+    font-size: 1.6rem;
+  }
+  .reviewerinfo {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small screens (Mobile devices, up to 767px) */
+@media (max-width: 767px) {
+  .reviewbox {
+    width: 90%; /* Make the box nearly full-width for small screens */
+    height: auto; /* Allow height to be flexible */
+    padding: 1.5rem; /* Increase padding for better readability */
+  }
+  .ratingbadge {
+    font-size: 1.4rem; /* Smaller text for mobile */
+  }
+  .ratingtext {
+    font-size: 1.4rem;
+  }
+  .reviewtext {
+    font-size: 1.4rem;
+  }
+  .reviewerinfo {
+    font-size: 1rem;
+  }
+}

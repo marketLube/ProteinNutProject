@@ -1,0 +1,233 @@
+$thead-height: 2.5rem;
+$margin: 1%;
+$padding: 1%;
+$row-height: 4rem;
+$num-rows: 6;
+
+.reviews {
+  &__body {
+    //check main-body class in base.scss
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h2 {
+      color: $table-blue;
+      font-size: 1rem; // Reduced from 1.2rem
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; // Adds space between checkbox and h2
+
+    input[type="checkbox"] {
+      margin: 0; // Removes default margin
+    }
+
+    h2 {
+      color: #00193B; // Changed from $table-blue to #00193B
+      font-size: 1rem; // Reduced from 1.2rem
+      margin: 0; // Removes default margin
+      font-weight: 600;
+    }
+  }
+
+  &__table {
+    padding: 2%;
+    background-color: $white;
+    border-radius: $border-radius-big;
+    box-shadow: $shadow;
+    overflow: hidden; // Hide any overflow
+
+    & table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed; // Use fixed table layout for better control
+
+      & tr {
+        height: 3rem; // Set a fixed height for rows
+        
+        &:nth-child(even) {
+          background-color: white;
+        }
+
+        &:nth-child(odd) {
+          background-color: $background-gray;
+        }
+      }
+
+      & td {
+        padding: 0.5rem;
+        vertical-align: middle;
+        font-size: 0.9rem; // Increased from 0.8rem to 0.9rem
+        color: #515C6B;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:first-child {
+          width: 30px;
+        }
+
+        &:nth-child(2) { // Name and email column
+          width: 20%;
+        }
+
+        &:nth-child(3) { // Rating column
+          width: 10%; // Reduced width for rating column
+        }
+
+        &:nth-child(4) { // Review comment column
+          width: 50%; // Increased width for review comment
+          white-space: normal; // Allow text to wrap
+          text-align: left; // Align text to the left
+          padding: 0.25rem 0.5rem; // Adjust padding to accommodate two lines
+        }
+
+        &:nth-child(5) { // Product and date column
+          width: 20%;
+        }
+      }
+    }
+
+    & thead {
+      color: $table-blue;
+      height: $thead-height;
+      background-color: transparent;
+      width: 100%;
+
+      th {
+        text-align: left;
+        padding: 0.5rem;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      th:first-child {
+        width: 30px;
+      }
+    }
+
+    & tbody {
+      height: calc(5 * #{$row-height});
+      & tr {
+        // height: auto; // Allow rows to expand based on content
+        // min-height: 4rem; // Increased minimum height to accommodate two lines
+        
+        height:#{$row-height}
+      }
+
+      & td {
+        font-size: 0.9rem; // Increased from 0.8rem to 0.9rem
+        line-height: 1.4; // Slightly increased from 1.3 to accommodate larger font size
+
+        .fa-star {
+          color: #ccc; // Default color for empty stars
+          &.filled {
+            color: #FFD700; // Color for filled stars (full stars)
+          }
+        }
+        
+        .fa-star-half-alt {
+          color: #ccc; // Default color for half stars
+          &.filled {
+            color: #FFD700; // Color for half-filled stars
+          }
+        }
+
+        .review-comment {
+          width: 50%; // Increased width for review comment
+          white-space: normal; // Allow text to wrap
+          text-align: left; // Align text to the left
+          overflow: hidden; // Hide overflow
+          text-overflow: ellipsis; // Use ellipsis for overflow
+          display: -webkit-box;
+          -webkit-line-clamp: 2; // Limit to two lines
+          -webkit-box-orient: vertical;
+          line-height: 1.3; // Adjust line height for better readability
+          max-height: 2.6em; // Set max-height to accommodate two lines
+        }
+
+        .edit-button {
+          padding: 5px 10px;
+          background-color: $table-blue;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: darken($table-blue, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    @include flex(between);
+  }
+
+  &__dropdown {
+    padding: 0.5rem 2rem 0.5rem 0.5rem; // Increased right padding
+    border-radius: 4px;
+    border: none;
+    color: #1B1B1B;
+    background-color: $white;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007BFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center; // Adjusted to center vertically
+    background-size: 0.8rem auto; // Slightly increased size for better visibility
+    padding-right: 1.5rem;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(0, 25, 59, 0.2);
+    }
+  }
+
+  &__name-email {
+    .customer-name {
+      font-weight: bold;
+      color: #00193B;
+    }
+    div:last-child {
+      font-size: 0.7rem; // Reduced from 0.8rem
+      color: $text-gray;
+    }
+  }
+
+  &__product-date {
+    .product-name {
+      font-weight: bold;
+      color: #00193B;
+    }
+    div:last-child {
+      font-size: 0.7rem; // Reduced from 0.8rem
+      color: $text-gray;
+    }
+  }
+}
+
+.selctors {
+  background-color: white;
+  width: 15rem;
+  border-radius: 7px;
+  border-color: black;
+  padding: .5rem;
+}
+
+.selector {
+  @include flex(between);
+  gap: 2rem;
+}

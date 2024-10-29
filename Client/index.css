@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-geen: #00BA9D
+  --color-yellow: #FFF2AE;
+}

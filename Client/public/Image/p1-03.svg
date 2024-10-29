@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.71 118.54">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Degular-Bold, Degular;
+        font-size: 81.31px;
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff2be;
+      }
+
+      .cls-3 {
+        font-family: Degular-Semibold, Degular;
+        font-size: 50.9px;
+        font-weight: 600;
+      }
+
+      .cls-4 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g>
+    <text class="cls-1" transform="translate(0 65.05)"><tspan x="0" y="0">Energy</tspan></text>
+    <path class="cls-2" d="M16.51,118.43c27.44-8.17,55.47-14.33,83.81-18.38,14.03-2.01,28.14-3.48,42.28-4.44,13.32-.91,26.75-1.61,40.09-.84,14.08.81,28.26,3.55,40.72,10.43,2.78,1.53,5.26-2.72,2.49-4.25-23.5-12.99-51.57-12.13-77.55-10.62-28.79,1.67-57.48,5.48-85.71,11.37-15.97,3.33-31.8,7.34-47.43,11.99-3.03.9-1.74,5.66,1.31,4.75h0Z"/>
+  </g>
+  <text class="cls-3" transform="translate(263.71 65.13)"><tspan x="0" y="0">BO</tspan><tspan class="cls-5" x="62.6" y="0">O</tspan><tspan class="cls-4" x="95.53" y="0">S</tspan><tspan x="123.58" y="0">TING</tspan></text>
+</svg>

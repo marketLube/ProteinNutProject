@@ -1,0 +1,32 @@
+.logoContainer {
+  height: 7rem;
+}
+
+.logoContainer img {
+  height: 100%;
+  width: auto; /* Ensure the image maintains its aspect ratio */
+}
+
+@media (max-width: 1200px) {
+  .logoContainer {
+    height: 6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .logoContainer {
+    height: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .logoContainer {
+    height: 4.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logoContainer {
+    height: 4rem;
+  }
+}

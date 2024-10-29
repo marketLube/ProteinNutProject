@@ -1,0 +1,22 @@
+{
+  "name": "protein-nut",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd Client && npm run dev",
+    "build-client": "cd Client && npm run build",
+    "server": "cross-env NODE_ENV=development nodemon Server/api/index.js",
+    "start": "node Server/api/index.js",
+    "build": "npm run build-client",
+    "dev": "npm run build-client && concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,0 +1,39 @@
+/* Degular Black */
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/Degular-Black.otf") format("opentype");
+  font-weight: 900; /* Assuming this is the heaviest weight */
+  font-style: normal;
+}
+/* Degular Black */
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/Degular-Bold.otf") format("opentype");
+  font-weight: 700; /* Assuming this is the heaviest weight */
+  font-style: normal;
+}
+
+/* Add other weights similarly */
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/Degular-Regular.otf") format("opentype");
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/Degular-Medium.otf") format("opentype");
+  font-weight: 500; /* Medium weight */
+  font-style: normal;
+}
+
+/* If you have more weights, add them similarly */
+@font-face {
+  font-family: "Sophia";
+  src: url("/fonts/Sofia Pro Regular Az.woff2") format("woff2"),
+    url("/fonts/Sofia Pro Regular Az.woff") format("woff"),
+    url("/fonts/Sofia Pro Regular Az.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
